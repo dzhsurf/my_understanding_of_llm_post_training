@@ -53,9 +53,14 @@ The post-training process can be organized into two main categories: the methods
 
 **2. Based on Training Objectives**
 
-In contrast, reinforcement learning emphasizes enhancing the overall behavior and performance of the model on a given task. It is implemented via methods such as:
+- Supervised Fine-Tuning (SFT)
+  This method fine-tunes the model using a fixed dataset—often meticulously curated and annotated by humans—to imbue the model with domain-specific knowledge and a targeted response style. The cross-entropy loss function is typically employed to directly maximize the probability of generating correct responses.
 
-- RLHF (Reinforcement Learning from Human Feedback): This involves training a reward model based on human preference indicators, followed by using optimization algorithms like Proximal Policy Optimization (PPO) under a composite loss framework that includes policy loss, KL divergence penalties (to keep the model’s outputs from deviating excessively from its pre-trained behavior), and value function updates.
+- Reinforcement Learning (RL)
+
+  In contrast, reinforcement learning emphasizes enhancing the overall behavior and performance of the model on a given task. It is implemented via methods such as:
+
+  - RLHF (Reinforcement Learning from Human Feedback): This involves training a reward model based on human preference indicators, followed by using optimization algorithms like Proximal Policy Optimization (PPO) under a composite loss framework that includes policy loss, KL divergence penalties (to keep the model’s outputs from deviating excessively from its pre-trained behavior), and value function updates.
 
 It is worth noting that models such as InstructGPT usually undergo an initial phase of supervised fine-tuning (SFT) before proceeding to RLHF, ensuring that the responses are well-aligned with human expectations at both levels.
 
@@ -125,4 +130,3 @@ Common tools and frameworks used to facilitate these strategies include:
 
 - Fine-Tuning Tools: Axolotl is well-known for its ease and efficiency in fine-tuning models. It integrates many components, such as Accelerator frameworks, LoRA, DeepSpeed, Ray, and more.
 - Monitoring Tools: Solutions like WandB (Weights & Biases) play a pivotal role in real-time tracking of training metrics, visualizing model performance, and diagnosing issues during the training process.
-
