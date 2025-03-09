@@ -54,6 +54,7 @@ The post-training process can be organized into two main categories: the methods
 **2. Based on Training Objectives**
 
 - Supervised Fine-Tuning (SFT)
+
   This method fine-tunes the model using a fixed dataset—often meticulously curated and annotated by humans—to imbue the model with domain-specific knowledge and a targeted response style. The cross-entropy loss function is typically employed to directly maximize the probability of generating correct responses.
 
 - Reinforcement Learning (RL)
